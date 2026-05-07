@@ -1,0 +1,7 @@
+provider,model,avg_response_time_sec,avg_tokens_per_second,avg_output_tokens,avg_keyword_score,avg_ram_change_mb
+Local Ollama,gemma3:1b,7.02,23.7,67.88,0.71,-39.9
+Local Ollama,gemma3:4b,14.65,10.09,81.88,0.88,-43.62
+Local Ollama,mistral,27.07,5.98,113.88,0.82,-45.78
+Local Ollama,phi3,16.06,9.95,92.5,0.88,33.23
+Local Ollama,smollm2:1.7b,9.02,15.38,72.0,0.85,165.69
+Local Ollama,tinyllama,7.5,31.45,115.75,0.67,81.17

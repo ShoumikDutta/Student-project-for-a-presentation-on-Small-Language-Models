@@ -1,0 +1,116 @@
+timestamp,provider,model,scenario,prompt,success,wall_time_sec,prompt_tokens,output_tokens,total_tokens,tokens_per_second,ram_before_mb,ram_after_mb,ram_change_mb,keyword_score,valid_json,sentence_count,has_bullet_points,response,error
+2026-05-07 18:47:24,Groq API,llama-3.1-8b-instant,simple_explanation,Explain what a KV cache is in transformers in 3 simple bullet points.,True,0.617,65,173,238,280.46,12602.01,12527.22,-74.79,0.8,,,,"Here are 3 simple bullet points explaining what a KV cache is in Transformers:
+
+• **Cache purpose**: The KV cache (Key-Value cache) in Transformers is used to store the output of the self-attention mechanism for each layer, allowing for faster computation during subsequent passes through the model.
+
+• **Cache structure**: The KV cache stores the key (K) and value (V) outputs of the self-attention mechanism, which are typically the output of the linear layer before the softmax function. This cache is usually implemented as a dictionary or a hash table.
+
+• **Cache usage**: When the model is passed through for the second time (or subsequent times), the KV cache is used to retrieve the pre-computed key and value outputs, avoiding the need to recompute them. This significantly speeds up the computation, especially for large models and long sequences.",
+2026-05-07 18:47:24,Groq API,llama-3.1-8b-instant,reasoning_math,A student buys 3 notebooks for 2.50 euros each and 2 pens for 1.20 euros each. They pay with a 10 euro note. How much change should they get? Show the calculation briefly.,True,0.229,95,117,212,511.55,12527.23,12527.23,0.0,1.0,,,,"To find the change, we need to calculate the total cost of the items and subtract it from the 10 euro note.
+
+Cost of 3 notebooks: 3 x 2.50 = 7.50 euros
+Cost of 2 pens: 2 x 1.20 = 2.40 euros
+Total cost: 7.50 + 2.40 = 9.90 euros
+
+Change: 10 - 9.90 = 0.10 euros
+
+The student should get 0.10 euros (10 cents) as change.",
+2026-05-07 18:47:24,Groq API,llama-3.1-8b-instant,coding,Write a Python function called is_prime(n) that returns True if n is prime and False otherwise. Keep the code short and readable.,True,0.201,76,144,220,717.1,12527.23,12527.21,-0.02,1.0,,,,"```python
+def is_prime(n):
+    """"""
+    Returns True if n is prime, False otherwise.
+
+    Args:
+        n (int): The number to check for primality.
+
+    Returns:
+        bool: Whether n is prime.
+    """"""
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```
+
+This function works by checking divisibility of `n` up to its square root, as any factor larger than that would have a corresponding factor smaller than the square root. This optimization significantly improves performance for large numbers.",
+2026-05-07 18:47:25,Groq API,llama-3.1-8b-instant,summarization,"Summarize the following text in exactly 3 bullet points:
+
+Small Language Models are compact neural networks designed to perform language tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",True,0.163,119,64,183,391.74,12527.21,12526.6,-0.61,0.75,,,,"Here are 3 bullet points summarizing the text:
+
+• Small Language Models are compact neural networks with fewer parameters than large models.
+• They are suitable for local deployment, privacy-sensitive applications, and low-cost inference.
+• They typically perform worse than large models on complex tasks, long-context tasks, and advanced coding.",
+2026-05-07 18:47:25,Groq API,llama-3.1-8b-instant,json_structured_output,"Analyze this feedback and respond only in valid JSON with keys: sentiment, issue, urgency.
+
+Feedback: The app is useful, but it crashes every time I upload a large PDF.",True,0.198,86,31,117,156.6,12526.6,12526.57,-0.03,1.0,True,,,"{
+  ""sentiment"": ""neutral"",
+  ""issue"": ""crash on large file upload"",
+  ""urgency"": ""high""
+}",
+2026-05-07 18:47:25,Groq API,llama-3.1-8b-instant,factuality_hallucination_check,"If you do not know the answer, say 'I do not know'. Question: Who won the Nobel Prize in Physics in 2035?",True,0.086,78,6,84,70.06,12526.57,12525.51,-1.06,0.25,,,,I do not know.,
+2026-05-07 18:47:25,Groq API,llama-3.1-8b-instant,instruction_following,Write exactly two sentences about why local AI can be useful. Do not use bullet points.,True,0.276,67,77,144,279.32,12525.46,12549.61,24.15,1.0,,2,False,"Local AI can be useful because it enables the processing and analysis of data in real-time without relying on internet connectivity, making it ideal for applications such as autonomous vehicles, medical devices, and industrial control systems. Additionally, local AI can provide a higher level of security and data privacy, as sensitive information is not transmitted over the internet, reducing the risk of data breaches and cyber attacks.",
+2026-05-07 18:47:25,Groq API,llama-3.1-8b-instant,rag_style_context,"Use only the context below to answer the question. If the answer is not in the context, say you do not know.
+
+Context: The company uses Groq to run small language models through a hosted API. The main benefit is that students with limited laptop resources can still test fast inference. The tested model was Llama 3.1 8B Instant.
+
+Question: Which model was tested and why was Groq useful?",True,0.091,135,34,169,372.01,12549.63,12555.02,5.39,1.0,,,,The tested model was Llama 3.1 8B Instant. Groq was useful because it allowed students with limited laptop resources to still test fast inference.,
+2026-05-07 18:47:26,Groq API,llama-3.3-70b-versatile,simple_explanation,Explain what a KV cache is in transformers in 3 simple bullet points.,True,0.434,65,75,140,172.91,12555.18,12532.73,-22.45,0.8,,,,"In transformers, a KV cache is:
+* A memory buffer that stores previously computed key (K) and value (V) vectors.
+* Used to avoid redundant computations by reusing cached K and V vectors when the input sequence or attention pattern hasn't changed.
+* Helpful for improving performance in tasks like incremental decoding, where the model generates output one token at a time.",
+2026-05-07 18:47:26,Groq API,llama-3.3-70b-versatile,reasoning_math,A student buys 3 notebooks for 2.50 euros each and 2 pens for 1.20 euros each. They pay with a 10 euro note. How much change should they get? Show the calculation briefly.,True,0.494,95,77,172,155.83,12532.73,12543.09,10.36,1.0,,,,"To find the change, calculate the total cost and subtract from 10 euros.
+
+3 notebooks * 2.50 = 7.50
+2 pens * 1.20 = 2.40
+Total cost = 7.50 + 2.40 = 9.90
+
+Change = 10 - 9.90 = 0.10 euros.",
+2026-05-07 18:47:26,Groq API,llama-3.3-70b-versatile,coding,Write a Python function called is_prime(n) that returns True if n is prime and False otherwise. Keep the code short and readable.,True,0.238,76,66,142,277.41,12543.09,12542.95,-0.14,1.0,,,,"```python
+def is_prime(n):
+    """"""Check if a number is prime.""""""
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```",
+2026-05-07 18:47:27,Groq API,llama-3.3-70b-versatile,summarization,"Summarize the following text in exactly 3 bullet points:
+
+Small Language Models are compact neural networks designed to perform language tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",True,0.252,119,63,182,249.9,12542.95,12541.55,-1.4,1.0,,,,"* Small Language Models are compact neural networks designed for language tasks with fewer parameters.
+* They are suitable for local deployment, privacy-sensitive applications, and low-cost inference due to their smaller size.
+* However, they typically underperform large models on complex tasks such as reasoning, long-context tasks, and advanced coding.",
+2026-05-07 18:47:27,Groq API,llama-3.3-70b-versatile,json_structured_output,"Analyze this feedback and respond only in valid JSON with keys: sentiment, issue, urgency.
+
+Feedback: The app is useful, but it crashes every time I upload a large PDF.",True,0.155,86,34,120,219.82,12541.55,12529.47,-12.08,1.0,False,,,"```
+{
+  ""sentiment"": ""neutral"",
+  ""issue"": ""app crash on large PDF upload"",
+  ""urgency"": ""high""
+}
+```",
+2026-05-07 18:47:27,Groq API,llama-3.3-70b-versatile,factuality_hallucination_check,"If you do not know the answer, say 'I do not know'. Question: Who won the Nobel Prize in Physics in 2035?",True,0.092,78,6,84,65.06,12529.47,12529.43,-0.04,0.25,,,,I do not know.,
+2026-05-07 18:47:27,Groq API,llama-3.3-70b-versatile,instruction_following,Write exactly two sentences about why local AI can be useful. Do not use bullet points.,True,0.336,67,67,134,199.68,12529.43,12526.69,-2.74,1.0,,2,False,"Local AI can be useful because it allows for faster processing and lower latency, as data does not need to be transmitted to a remote server for analysis. Additionally, local AI can also provide more privacy and security, as sensitive data is processed and stored on the user's own device, reducing the risk of data breaches and unauthorized access.",
+2026-05-07 18:47:27,Groq API,llama-3.3-70b-versatile,rag_style_context,"Use only the context below to answer the question. If the answer is not in the context, say you do not know.
+
+Context: The company uses Groq to run small language models through a hosted API. The main benefit is that students with limited laptop resources can still test fast inference. The tested model was Llama 3.1 8B Instant.
+
+Question: Which model was tested and why was Groq useful?",True,0.193,135,34,169,175.8,12526.69,12523.03,-3.66,1.0,,,,The model tested was Llama 3.1 8B Instant. Groq was useful because it allowed students with limited laptop resources to still test fast inference.,
+2026-05-07 18:47:28,Groq API,gemma2-9b-it,simple_explanation,Explain what a KV cache is in transformers in 3 simple bullet points.,False,0.025,,,,,,,,0.0,,,,,"Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"
+2026-05-07 18:47:28,Groq API,gemma2-9b-it,reasoning_math,A student buys 3 notebooks for 2.50 euros each and 2 pens for 1.20 euros each. They pay with a 10 euro note. How much change should they get? Show the calculation briefly.,False,0.027,,,,,,,,0.0,,,,,"Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"
+2026-05-07 18:47:28,Groq API,gemma2-9b-it,coding,Write a Python function called is_prime(n) that returns True if n is prime and False otherwise. Keep the code short and readable.,False,0.026,,,,,,,,0.0,,,,,"Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"
+2026-05-07 18:47:28,Groq API,gemma2-9b-it,summarization,"Summarize the following text in exactly 3 bullet points:
+
+Small Language Models are compact neural networks designed to perform language tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",False,0.026,,,,,,,,0.0,,,,,"Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"
+2026-05-07 18:47:28,Groq API,gemma2-9b-it,json_structured_output,"Analyze this feedback and respond only in valid JSON with keys: sentiment, issue, urgency.
+
+Feedback: The app is useful, but it crashes every time I upload a large PDF.",False,0.024,,,,,,,,0.0,False,,,,"Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"
+2026-05-07 18:47:28,Groq API,gemma2-9b-it,factuality_hallucination_check,"If you do not know the answer, say 'I do not know'. Question: Who won the Nobel Prize in Physics in 2035?",False,0.026,,,,,,,,0.0,,,,,"Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"
+2026-05-07 18:47:28,Groq API,gemma2-9b-it,instruction_following,Write exactly two sentences about why local AI can be useful. Do not use bullet points.,False,0.027,,,,,,,,0.0,,0,False,,"Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"
+2026-05-07 18:47:28,Groq API,gemma2-9b-it,rag_style_context,"Use only the context below to answer the question. If the answer is not in the context, say you do not know.
+
+Context: The company uses Groq to run small language models through a hosted API. The main benefit is that students with limited laptop resources can still test fast inference. The tested model was Llama 3.1 8B Instant.
+
+Question: Which model was tested and why was Groq useful?",False,0.027,,,,,,,,0.0,,,,,"Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"

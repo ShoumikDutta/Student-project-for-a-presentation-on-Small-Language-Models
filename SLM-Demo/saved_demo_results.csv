@@ -1,0 +1,425 @@
+timestamp,model,task_key,task_title,prompt,response,raw_response,clean_response,extracted_json,success,error,response_time_sec,output_words,output_tokens_est,words_per_second,tokens_per_second_est,valid_json,keyword_score_percent
+2026-05-07T20:51:41,gemma3:1b,summarization,Summarization,"You are a small language model running locally.
+
+Task:
+Summarize the following note in one short sentence.
+
+Note:
+
+Hi Shoumik, please remind Faisal that the lab report is due on 12 May.
+Also email the professor to ask if we can join Lab Group 1.
+Meeting with Nils is on Thursday at 14:00.
+The dashboard loading is slow, so maybe we should test a smaller model.","Faisal needs a reminder about the lab report due on May 12th, and the team should email the professor about joining Lab Group 1 and meet with Nils on Thursday at 14:00.","Faisal needs a reminder about the lab report due on May 12th, and the team should email the professor about joining Lab Group 1 and meet with Nils on Thursday at 14:00.","Faisal needs a reminder about the lab report due on May 12th, and the team should email the professor about joining Lab Group 1 and meet with Nils on Thursday at 14:00.",,True,,5.03,32,41,6.36,8.15,False,50.0
+2026-05-07T20:51:53,gemma3:1b,task_extraction,Task Extraction,"You are a small language model running locally.
+
+Task:
+Extract all tasks, people, dates, and actions from the note.
+
+Return the answer in clear bullet points.
+
+Note:
+
+Hi Shoumik, please remind Faisal that the lab report is due on 12 May.
+Also email the professor to ask if we can join Lab Group 1.
+Meeting with Nils is on Thursday at 14:00.
+The dashboard loading is slow, so maybe we should test a smaller model.","Here’s a breakdown of the tasks, people, dates, and actions extracted from the note:
+
+*   **Tasks:**
+    *   Remind Faisal that the lab report is due on May 12th.
+    *   Email the professor to inquire about joining Lab Group 1.
+    *   Test a smaller model to address the dashboard loading issue.
+
+*   **People:**
+    *   Shoumik
+    *   Faisal
+    *   Nils
+
+*   **Dates:**
+    *   May 12th
+    *   Thursday at 14:00
+
+*   **Actions:**
+    *   Send reminder to Faisal.
+    *   Email the professor.
+    *   Test a smaller model.
+    *   Load the dashboard.","Here’s a breakdown of the tasks, people, dates, and actions extracted from the note:
+
+*   **Tasks:**
+    *   Remind Faisal that the lab report is due on May 12th.
+    *   Email the professor to inquire about joining Lab Group 1.
+    *   Test a smaller model to address the dashboard loading issue.
+
+*   **People:**
+    *   Shoumik
+    *   Faisal
+    *   Nils
+
+*   **Dates:**
+    *   May 12th
+    *   Thursday at 14:00
+
+*   **Actions:**
+    *   Send reminder to Faisal.
+    *   Email the professor.
+    *   Test a smaller model.
+    *   Load the dashboard.","Here’s a breakdown of the tasks, people, dates, and actions extracted from the note:
+
+*   **Tasks:**
+    *   Remind Faisal that the lab report is due on May 12th.
+    *   Email the professor to inquire about joining Lab Group 1.
+    *   Test a smaller model to address the dashboard loading issue.
+
+*   **People:**
+    *   Shoumik
+    *   Faisal
+    *   Nils
+
+*   **Dates:**
+    *   May 12th
+    *   Thursday at 14:00
+
+*   **Actions:**
+    *   Send reminder to Faisal.
+    *   Email the professor.
+    *   Test a smaller model.
+    *   Load the dashboard.",,True,,11.72,87,113,7.42,9.64,False,80.0
+2026-05-07T20:52:11,gemma3:1b,json_output,Structured JSON Output,"You are a small language model running locally.
+
+Task:
+Extract useful information from the note and return ONLY valid JSON.
+
+Use this structure:
+{
+  ""tasks"": [
+    {
+      ""task"": ""string"",
+      ""person"": ""string or null"",
+      ""deadline_or_time"": ""string or null"",
+      ""suggested_action"": ""string""
+    }
+  ],
+  ""issues"": [
+    {
+      ""issue"": ""string"",
+      ""suggested_solution"": ""string""
+    }
+  ]
+}
+
+Note:
+
+Hi Shoumik, please remind Faisal that the lab report is due on 12 May.
+Also email the professor to ask if we can join Lab Group 1.
+Meeting with Nils is on Thursday at 14:00.
+The dashboard loading is slow, so maybe we should test a smaller model.","{
+  ""tasks"": [
+    {
+      ""task"": ""remind Faisal to submit lab report on 12 May"",
+      ""person"": ""Faisal"",
+      ""deadline_or_time"": ""12 May"",
+      ""suggested_action"": ""Remind Faisal""
+    },
+    {
+      ""task"": ""email professor to inquire about joining Lab Group 1"",
+      ""person"": ""Professor"",
+      ""suggested_solution"": ""Ask if we can join Lab Group 1""
+    },
+    {
+      ""task"": ""Meeting with Nils is on Thursday at 14:00"",
+      ""person"": ""Nils"",
+      ""deadline_or_time"": ""Thursday at 14:00"",
+      ""suggested_action"": ""Schedule Meeting with Nils""
+    },
+    {
+      ""task"": ""Dashboard loading is slow, maybe we should test a smaller model"",
+      ""person"": ""None"",
+      ""suggested_action"": ""Test a smaller model""
+    }
+  ],
+  ""issues"": [
+    {
+      ""issue"": ""Dashboard loading is slow"",
+      ""suggested_solution"": ""Test a smaller model""
+    }
+  ]
+}","```json
+{
+  ""tasks"": [
+    {
+      ""task"": ""remind Faisal to submit lab report on 12 May"",
+      ""person"": ""Faisal"",
+      ""deadline_or_time"": ""12 May"",
+      ""suggested_action"": ""Remind Faisal""
+    },
+    {
+      ""task"": ""email professor to inquire about joining Lab Group 1"",
+      ""person"": ""Professor"",
+      ""suggested_solution"": ""Ask if we can join Lab Group 1""
+    },
+    {
+      ""task"": ""Meeting with Nils is on Thursday at 14:00"",
+      ""person"": ""Nils"",
+      ""deadline_or_time"": ""Thursday at 14:00"",
+      ""suggested_action"": ""Schedule Meeting with Nils""
+    },
+    {
+      ""task"": ""Dashboard loading is slow, maybe we should test a smaller model"",
+      ""person"": ""None"",
+      ""suggested_action"": ""Test a smaller model""
+    }
+  ],
+  ""issues"": [
+    {
+      ""issue"": ""Dashboard loading is slow"",
+      ""suggested_solution"": ""Test a smaller model""
+    }
+  ]
+}
+```","{
+  ""tasks"": [
+    {
+      ""task"": ""remind Faisal to submit lab report on 12 May"",
+      ""person"": ""Faisal"",
+      ""deadline_or_time"": ""12 May"",
+      ""suggested_action"": ""Remind Faisal""
+    },
+    {
+      ""task"": ""email professor to inquire about joining Lab Group 1"",
+      ""person"": ""Professor"",
+      ""suggested_solution"": ""Ask if we can join Lab Group 1""
+    },
+    {
+      ""task"": ""Meeting with Nils is on Thursday at 14:00"",
+      ""person"": ""Nils"",
+      ""deadline_or_time"": ""Thursday at 14:00"",
+      ""suggested_action"": ""Schedule Meeting with Nils""
+    },
+    {
+      ""task"": ""Dashboard loading is slow, maybe we should test a smaller model"",
+      ""person"": ""None"",
+      ""suggested_action"": ""Test a smaller model""
+    }
+  ],
+  ""issues"": [
+    {
+      ""issue"": ""Dashboard loading is slow"",
+      ""suggested_solution"": ""Test a smaller model""
+    }
+  ]
+}","{
+  ""tasks"": [
+    {
+      ""task"": ""remind Faisal to submit lab report on 12 May"",
+      ""person"": ""Faisal"",
+      ""deadline_or_time"": ""12 May"",
+      ""suggested_action"": ""Remind Faisal""
+    },
+    {
+      ""task"": ""email professor to inquire about joining Lab Group 1"",
+      ""person"": ""Professor"",
+      ""suggested_solution"": ""Ask if we can join Lab Group 1""
+    },
+    {
+      ""task"": ""Meeting with Nils is on Thursday at 14:00"",
+      ""person"": ""Nils"",
+      ""deadline_or_time"": ""Thursday at 14:00"",
+      ""suggested_action"": ""Schedule Meeting with Nils""
+    },
+    {
+      ""task"": ""Dashboard loading is slow, maybe we should test a smaller model"",
+      ""person"": ""None"",
+      ""suggested_action"": ""Test a smaller model""
+    }
+  ],
+  ""issues"": [
+    {
+      ""issue"": ""Dashboard loading is slow"",
+      ""suggested_solution"": ""Test a smaller model""
+    }
+  ]
+}",True,,17.87,106,137,5.93,7.67,True,100.0
+2026-05-07T20:52:16,gemma3:1b,classification,Feedback Classification,"You are a small language model running locally.
+
+Classify this user feedback as one of:
+- complaint
+- question
+- praise
+- mixed
+
+Also give one short reason.
+
+Feedback:
+""The dashboard is useful, but the loading time is too slow.""","**Mixed**
+
+Reason: The feedback expresses both positive (useful dashboard) and negative (slow loading time) aspects, indicating a mixed sentiment.","**Mixed**
+
+Reason: The feedback expresses both positive (useful dashboard) and negative (slow loading time) aspects, indicating a mixed sentiment.","**Mixed**
+
+Reason: The feedback expresses both positive (useful dashboard) and negative (slow loading time) aspects, indicating a mixed sentiment.",,True,,5.11,19,24,3.72,4.7,False,100.0
+2026-05-07T20:52:38,phi3:mini,summarization,Summarization,"You are a small language model running locally.
+
+Task:
+Summarize the following note in one short sentence.
+
+Note:
+
+Hi Shoumik, please remind Faisal that the lab report is due on 12 May.
+Also email the professor to ask if we can join Lab Group 1.
+Meeting with Nils is on Thursday at 14:00.
+The dashboard loading is slow, so maybe we should test a smaller model.",Shoumik needs to remind Faisal about the lab report due date and inquire about joining Lab Group 1 while also considering testing a smaller model for faster dashboard load times; meeting with Nils is scheduled for Thursday at 2 PM local time.,Shoumik needs to remind Faisal about the lab report due date and inquire about joining Lab Group 1 while also considering testing a smaller model for faster dashboard load times; meeting with Nils is scheduled for Thursday at 2 PM local time.,Shoumik needs to remind Faisal about the lab report due date and inquire about joining Lab Group 1 while also considering testing a smaller model for faster dashboard load times; meeting with Nils is scheduled for Thursday at 2 PM local time.,,True,,22.01,42,54,1.91,2.45,False,75.0
+2026-05-07T20:52:55,phi3:mini,task_extraction,Task Extraction,"You are a small language model running locally.
+
+Task:
+Extract all tasks, people, dates, and actions from the note.
+
+Return the answer in clear bullet points.
+
+Note:
+
+Hi Shoumik, please remind Faisal that the lab report is due on 12 May.
+Also email the professor to ask if we can join Lab Group 1.
+Meeting with Nils is on Thursday at 14:00.
+The dashboard loading is slow, so maybe we should test a smaller model.","- Tasks:
+
+  - Remind Faisal about the lab report due date (due on 12 May).
+
+  - Email professor to inquire about joining Lab Group 1.
+
+  - Meeting with Nils scheduled for Thursday at 14:0terminal_timecode","- Tasks:
+
+  - Remind Faisal about the lab report due date (due on 12 May).
+
+  - Email professor to inquire about joining Lab Group 1.
+
+  - Meeting with Nils scheduled for Thursday at 14:0terminal_timecode","- Tasks:
+
+  - Remind Faisal about the lab report due date (due on 12 May).
+
+  - Email professor to inquire about joining Lab Group 1.
+
+  - Meeting with Nils scheduled for Thursday at 14:0terminal_timecode",,True,,17.53,34,44,1.94,2.51,False,100.0
+2026-05-07T20:53:30,phi3:mini,json_output,Structured JSON Output,"You are a small language model running locally.
+
+Task:
+Extract useful information from the note and return ONLY valid JSON.
+
+Use this structure:
+{
+  ""tasks"": [
+    {
+      ""task"": ""string"",
+      ""person"": ""string or null"",
+      ""deadline_or_time"": ""string or null"",
+      ""suggested_action"": ""string""
+    }
+  ],
+  ""issues"": [
+    {
+      ""issue"": ""string"",
+      ""suggested_solution"": ""string""
+    }
+  ]
+}
+
+Note:
+
+Hi Shoumik, please remind Faisal that the lab report is due on 12 May.
+Also email the professor to ask if we can join Lab Group 1.
+Meeting with Nils is on Thursday at 14:00.
+The dashboard loading is slow, so maybe we should test a smaller model.","{
+
+  ""tasks"": [
+    {
+      ""task"": ""Remind Faisal about the lab report due date"",
+      ""person"": ""Faisal"",
+      ""deadline_or end time"": ""12 May""
+      },
+     {
+       ""task"": ""Inquire with professor regarding joining Lab Group 1 via email."",
+       ""person"": null,
+       ""deadline_end time"": null
+    }
+   ],
+  ""issues"": [
+    {
+        ""issue"": ""Dashboard loading is slow"",
+        ""suggested solution"": ""Test a smaller model""
+      }
+    ]
+}","```json
+
+{
+
+  ""tasks"": [
+    {
+      ""task"": ""Remind Faisal about the lab report due date"",
+      ""person"": ""Faisal"",
+      ""deadline_or end time"": ""12 May""
+      },
+     {
+       ""task"": ""Inquire with professor regarding joining Lab Group 1 via email."",
+       ""person"": null,
+       ""deadline_end time"": null
+    }
+   ],
+  ""issues"": [
+    {
+        ""issue"": ""Dashboard loading is slow"",
+        ""suggested solution"": ""Test a smaller model""
+      }
+    ]
+}
+
+```","{
+
+  ""tasks"": [
+    {
+      ""task"": ""Remind Faisal about the lab report due date"",
+      ""person"": ""Faisal"",
+      ""deadline_or end time"": ""12 May""
+      },
+     {
+       ""task"": ""Inquire with professor regarding joining Lab Group 1 via email."",
+       ""person"": null,
+       ""deadline_end time"": null
+    }
+   ],
+  ""issues"": [
+    {
+        ""issue"": ""Dashboard loading is slow"",
+        ""suggested solution"": ""Test a smaller model""
+      }
+    ]
+}","{
+
+  ""tasks"": [
+    {
+      ""task"": ""Remind Faisal about the lab report due date"",
+      ""person"": ""Faisal"",
+      ""deadline_or end time"": ""12 May""
+      },
+     {
+       ""task"": ""Inquire with professor regarding joining Lab Group 1 via email."",
+       ""person"": null,
+       ""deadline_end time"": null
+    }
+   ],
+  ""issues"": [
+    {
+        ""issue"": ""Dashboard loading is slow"",
+        ""suggested solution"": ""Test a smaller model""
+      }
+    ]
+}",True,,34.84,57,74,1.64,2.12,True,100.0
+2026-05-07T20:57:32,phi3:mini,classification,Feedback Classification,"You are a small language model running locally.
+
+Classify this user feedback as one of:
+- complaint
+- question
+- praise
+- mixed
+
+Also give one short reason.
+
+Feedback:
+""The dashboard is useful, but the loading time is too slow.""",,,,,False,Timeout: model took too long to respond.,240,0,0,0.0,0.0,False,0.0

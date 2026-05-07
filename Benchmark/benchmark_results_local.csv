@@ -1,0 +1,333 @@
+timestamp,provider,model,scenario,prompt,success,wall_time_sec,ollama_total_duration_sec,load_duration_sec,prompt_eval_duration_sec,eval_duration_sec,prompt_tokens,output_tokens,tokens_per_second,ram_before_mb,ram_after_mb,ram_change_mb,keyword_score,valid_json,sentence_count,has_bullet_points,response,error
+2026-05-07 20:04:31,Local Ollama,phi3,simple_explanation,Explain what a KV cache is in transformers in 3 simple bullet points.,True,29.641,27.574,5.761,2.031,19.566,27,187,9.56,14117.31,14186.56,69.25,1.0,,,,"- A Key-Value (KV) cache stores data as pairs of keys and values, allowing for fast retrieval based on the key. In NLP models like Transformers, it can be used to store frequently accessed tokens or embeddings.
+- KV caches in transformers help speed up inference by storing intermediate results such as token representations between layers, reducing redundant computations within a single forward pass of an input sequence. This improves the overall efficiency and reduces latency during real-time applications like language translation or text summarization tasks.
+- Transformers can leverage KV caches to store precomputed attention weights for different heads in multi-head self-attention mechanisms, enabling faster computation of subsequent layers without recalculating the same values repeatedly. This technique is particularly useful when dealing with long input sequences or large batch sizes where memory and computational resources are limited.",
+2026-05-07 20:04:51,Local Ollama,phi3,reasoning_math,A student buys 3 notebooks for 2.50 euros each and 2 pens for 1.20 euros each. They pay with a 10 euro note. How much change should they get? Show the calculation briefly.,True,20.273,18.206,0.069,4.26,13.783,63,136,9.87,14186.62,14393.24,206.62,1.0,,,,"Cost of notebooks = 3 * 2.50€ = 7.50€  
+
+Cost of pens = 2 * 1debrer= 2.40€  
+
+Total cost = Cost of notebooks + Cost of pens = 7.50€ + 2.40€ = 9.90€  
+
+Change from a 10 euro note = 10€ - Total cost = 10€ - 9.90€ = 0.10€  
+
+The student should get 0.10 euros in change.",
+2026-05-07 20:05:05,Local Ollama,phi3,coding,Write a Python function called is_prime(n) that returns True if n is prime and False otherwise. Keep the code short and readable.,True,13.462,11.393,0.065,2.69,8.554,38,87,10.17,14393.23,14332.07,-61.16,1.0,,,,"```python
+
+def is_prime(n):
+
+    """"""Check if a number is prime.""""""
+
+    if n <= 1:
+
+        return False
+
+    for i in range(2, int(n**0dead-code here)) + 1):
+
+        if n % i == 0:
+
+            return False
+
+    return True
+
+```",
+2026-05-07 20:05:24,Local Ollama,phi3,summarization,"Summarize the following text in exactly 3 bullet points:
+
+Small Language Models are compact neural networks designed to perform language tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",True,19.249,17.166,0.075,6.314,10.672,89,103,9.65,14332.11,14355.36,23.25,0.75,,,,"- Small Language Models offer a compact alternative to larger neural networks with fewer parameters, making them suitable for local deployment or privacy concerns while maintaining reasonable performance in language processing tasks.
+- Despite their advantages, small models typically underperform compared to large frontier models when it comes to complex reasoning and handling long contexts due to limited capacity.
+- Small Language Models are not ideal for advanced coding applications as they lack the sophisticated capabilities of larger counterparts that excel in such tasks.",
+2026-05-07 20:05:35,Local Ollama,phi3,json_structured_output,"Analyze this feedback and respond only in valid JSON with keys: sentiment, issue, urgency.
+
+Feedback: The app is useful, but it crashes every time I upload a large PDF.",True,10.657,8.611,0.059,3.609,4.882,51,49,10.04,14355.36,14351.11,-4.25,1.0,False,,,"```json
+
+{
+
+  ""sentiment"": ""mixed"",
+
+  ""issue"": ""app crashing when uploading large files"",
+
+  ""urgency"": ""high""
+
+}
+
+```",
+2026-05-07 20:05:47,Local Ollama,phi3,factuality_hallucination_check,"If you do not know the answer, say 'I do not know'. Question: Who won the Nobel Prize in Physics in 2035?",True,12.179,10.142,0.051,2.921,7.1,40,72,10.14,14351.11,14419.14,68.03,0.25,,,,"As of my knowledge cutoff date in April 2decade-end), I cannot provide information on events that occurred beyond this time. Therefore, if no one has been awarded a Nobel Prize in Physics by your specified year (2035) up to the current moment, then it is accurate for me to say ""I do not know.""",
+2026-05-07 20:05:57,Local Ollama,phi3,instruction_following,Write exactly two sentences about why local AI can be useful. Do not use bullet points.,True,10.166,8.108,0.057,1.919,6.101,28,62,10.16,14419.08,14391.78,-27.3,1.0,,2,False,"Local AI systems provide personalized experiences and quicker responses to user queries, enhancing efficiency in various industries such as healthcare, education, or retail. By processing data on-site, they reduce latency issues associated with cloud computing and ensure better privacy control for sensitive information.",
+2026-05-07 20:06:10,Local Ollama,phi3,rag_style_context,"Use only the context below to answer the question. If the answer is not in the context, say you do not know.
+
+Context: The company uses Ollama to run small language models locally. The main benefit is that private documents do not leave the laptop. The tested model was Phi-3 Mini.
+
+Question: Which model was tested and what was the main privacy benefit?",True,12.838,10.778,0.05,6.32,4.382,92,44,10.04,14391.72,14383.09,-8.63,1.0,,,,"The tested model was Phi-3 Mini, and the main privacy benefit was ensuring that private documents did not leave the user's laptop by using Ollama to run small language models locally.",
+2026-05-07 20:06:23,Local Ollama,gemma3:1b,simple_explanation,Explain what a KV cache is in transformers in 3 simple bullet points.,True,13.464,11.418,3.619,0.484,6.903,24,153,22.16,14383.09,14758.06,374.97,0.4,,,,"Okay, here’s a breakdown of KV caches in Transformers in 3 simple bullet points:
+
+*   **Speed Boost:** KV caches store the results of computationally expensive operations (like attention calculations) so they don’t have to be re-calculated every time. This dramatically speeds up training and inference.
+
+*   **Memory Optimization:** They act like a ""shortcut"" – the model remembers the previous steps, allowing it to quickly access the information needed without needing to re-compute everything.
+
+*   **Scalability:** KV caches are crucial for scaling Transformers to larger models and datasets because they allow for faster processing and better performance across multiple devices. 
+
+
+Do you want me to elaborate on any of these points or provide a more detailed explanation?",
+2026-05-07 20:06:32,Local Ollama,gemma3:1b,reasoning_math,A student buys 3 notebooks for 2.50 euros each and 2 pens for 1.20 euros each. They pay with a 10 euro note. How much change should they get? Show the calculation briefly.,True,9.038,6.994,0.889,0.942,4.981,58,115,23.09,14758.06,14077.58,-680.48,1.0,,,,"Here's the calculation:
+
+* **Notebook cost:** 3 notebooks * €2.50/notebook = €7.50
+* **Pen cost:** 2 pens * €1.20/pen = €2.40
+* **Total cost:** €7.50 + €2.40 = €9.90
+* **Change:** €10.00 - €9.90 = €0.10
+
+**Answer:** The student should get €0.10 in change.",
+2026-05-07 20:06:39,Local Ollama,gemma3:1b,coding,Write a Python function called is_prime(n) that returns True if n is prime and False otherwise. Keep the code short and readable.,True,6.678,4.633,0.624,0.618,3.265,38,79,24.19,14077.58,14127.62,50.04,1.0,,,,"```python
+def is_prime(n):
+  """"""
+  Checks if a number is prime.
+  """"""
+  if n <= 1:
+    return False
+  for i in range(2, int(n**0.5) + 1):
+    if n % i == 0:
+      return False
+  return True
+```",
+2026-05-07 20:06:47,Local Ollama,gemma3:1b,summarization,"Summarize the following text in exactly 3 bullet points:
+
+Small Language Models are compact neural networks designed to perform language tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",True,7.876,5.822,0.655,1.329,3.704,82,90,24.3,14120.7,14187.36,66.66,0.75,,,,"Here’s a 3-bullet point summary of the text:
+
+*   **Compact & Efficient:** Small Language Models are smaller and more efficient than larger models.
+*   **Specialized Use Cases:** They are well-suited for deployment in limited environments, privacy concerns, and low-cost processing.
+*   **Limited Capabilities:** They struggle with complex reasoning, long-range tasks, and advanced coding compared to larger models.",
+2026-05-07 20:06:52,Local Ollama,gemma3:1b,json_structured_output,"Analyze this feedback and respond only in valid JSON with keys: sentiment, issue, urgency.
+
+Feedback: The app is useful, but it crashes every time I upload a large PDF.",True,5.124,3.073,0.727,0.737,1.554,46,36,23.17,14187.36,14025.82,-161.54,1.0,False,,,"```json
+{
+  ""sentiment"": ""positive"",
+  ""issue"": ""crash reporting"",
+  ""urgency"": ""low""
+}
+```
+",
+2026-05-07 20:06:56,Local Ollama,gemma3:1b,factuality_hallucination_check,"If you do not know the answer, say 'I do not know'. Question: Who won the Nobel Prize in Physics in 2035?",True,3.616,1.562,0.658,0.685,0.21,40,6,28.6,14026.05,14035.36,9.31,0.25,,,,I do not know.,
+2026-05-07 20:07:01,Local Ollama,gemma3:1b,instruction_following,Write exactly two sentences about why local AI can be useful. Do not use bullet points.,True,5.405,3.368,0.632,0.492,2.169,27,48,22.13,14035.43,14036.07,0.64,1.0,,2,False,"Local AI models offer enhanced privacy and security as data doesn’t need to be sent to a central server for processing. This allows for more customized and responsive applications tailored to specific local environments and needs, ultimately reducing reliance on cloud infrastructure.",
+2026-05-07 20:07:06,Local Ollama,gemma3:1b,rag_style_context,"Use only the context below to answer the question. If the answer is not in the context, say you do not know.
+
+Context: The company uses Ollama to run small language models locally. The main benefit is that private documents do not leave the laptop. The tested model was Phi-3 Mini.
+
+Question: Which model was tested and what was the main privacy benefit?",True,4.921,2.87,0.678,1.438,0.727,86,16,22.0,14036.44,14057.61,21.17,0.25,,,,The main privacy benefit was that the tested model was Phi-3 Mini.,
+2026-05-07 20:07:37,Local Ollama,gemma3:4b,simple_explanation,Explain what a KV cache is in transformers in 3 simple bullet points.,True,30.481,28.436,7.375,1.428,19.201,24,176,9.17,14057.61,13408.07,-649.54,0.8,,,,"Okay, here's an explanation of a KV cache in transformers, broken down into 3 simple bullet points:
+
+*   **It Stores Past Context:** A KV (Key-Value) cache is a data structure that remembers the information (words and their representations) that the transformer has already processed in a sequence.
+
+*   **Efficient Attention:** During the next step of processing, the KV cache allows the transformer to quickly look up and reuse this past information when calculating attention scores – it doesn't need to re-process everything from scratch.
+
+*   **Contextual Understanding:** By storing and retrieving past context, the KV cache helps the transformer understand the relationships between words in a longer sequence, leading to better predictions and generation. 
+
+---
+
+Would you like me to elaborate on any of these points, or perhaps explain how it works in more detail?",
+2026-05-07 20:07:56,Local Ollama,gemma3:4b,reasoning_math,A student buys 3 notebooks for 2.50 euros each and 2 pens for 1.20 euros each. They pay with a 10 euro note. How much change should they get? Show the calculation briefly.,True,19.637,17.605,0.717,2.835,13.848,58,137,9.89,13408.07,12471.64,-936.43,1.0,,,,"Here's the calculation:
+
+*   **Cost of notebooks:** 3 notebooks * 2.50 euros/notebook = 7.50 euros
+*   **Cost of pens:** 2 pens * 1.20 euros/pen = 2.40 euros
+*   **Total cost:** 7.50 euros + 2.40 euros = 9.90 euros
+*   **Change:** 10.00 euros - 9.90 euros = 0.10 euros
+
+**Answer:** The student should get 0.10 euros (10 cents) in change.",
+2026-05-07 20:08:12,Local Ollama,gemma3:4b,coding,Write a Python function called is_prime(n) that returns True if n is prime and False otherwise. Keep the code short and readable.,True,15.447,13.388,0.788,1.789,10.657,38,107,10.04,12471.98,12923.85,451.87,1.0,,,,"```python
+def is_prime(n):
+  """"""
+  Checks if a number is prime.
+
+  Args:
+    n: The number to check.
+
+  Returns:
+    True if n is prime, False otherwise.
+  """"""
+  if n <= 1:
+    return False
+  for i in range(2, int(n**0.5) + 1):
+    if n % i == 0:
+      return False
+  return True
+```",
+2026-05-07 20:08:31,Local Ollama,gemma3:4b,summarization,"Summarize the following text in exactly 3 bullet points:
+
+Small Language Models are compact neural networks designed to perform language tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",True,19.712,17.637,0.819,4.112,12.521,82,121,9.66,12923.86,13044.29,120.43,1.0,,,,"Here’s a 3-bullet point summary of the text:
+
+*   **Compact & Efficient:** Small Language Models (SLMs) are smaller neural networks optimized for efficiency.
+*   **Ideal for Specific Use Cases:** They’re well-suited for local deployment, privacy-focused applications, and cost-effective use.
+*   **Limited Capabilities:** SLMs generally underperform large models in complex reasoning, long contexts, and advanced coding tasks. 
+
+---
+
+Would you like me to summarize a different text, or perhaps adjust the bullet points based on a specific focus?",
+2026-05-07 20:08:40,Local Ollama,gemma3:4b,json_structured_output,"Analyze this feedback and respond only in valid JSON with keys: sentiment, issue, urgency.
+
+Feedback: The app is useful, but it crashes every time I upload a large PDF.",True,8.669,6.633,0.672,2.21,3.694,46,38,10.29,13044.52,13156.83,112.31,1.0,False,,,"```json
+{
+  ""sentiment"": ""mixed"",
+  ""issue"": ""app crashes during PDF upload"",
+  ""urgency"": ""high""
+}
+```",
+2026-05-07 20:08:45,Local Ollama,gemma3:4b,factuality_hallucination_check,"If you do not know the answer, say 'I do not know'. Question: Who won the Nobel Prize in Physics in 2035?",True,5.282,3.216,0.699,1.982,0.526,40,6,11.42,13156.67,13280.53,123.86,0.25,,,,I do not know.,
+2026-05-07 20:08:54,Local Ollama,gemma3:4b,instruction_following,Write exactly two sentences about why local AI can be useful. Do not use bullet points.,True,8.823,6.784,0.73,1.184,4.786,27,46,9.61,13280.54,13732.22,451.68,1.0,,2,False,"Local AI solutions offer enhanced privacy and security by processing data directly within a business or organization, rather than relying on external servers. This localized approach can also improve response times and tailor AI applications specifically to unique local needs and datasets.",
+2026-05-07 20:09:03,Local Ollama,gemma3:4b,rag_style_context,"Use only the context below to answer the question. If the answer is not in the context, say you do not know.
+
+Context: The company uses Ollama to run small language models locally. The main benefit is that private documents do not leave the laptop. The tested model was Phi-3 Mini.
+
+Question: Which model was tested and what was the main privacy benefit?",True,9.118,7.068,0.736,4.039,2.262,86,24,10.61,13732.21,13709.09,-23.12,1.0,,,,The model tested was Phi-3 Mini. The main privacy benefit was that private documents do not leave the laptop.,
+2026-05-07 20:09:47,Local Ollama,mistral,simple_explanation,Explain what a KV cache is in transformers in 3 simple bullet points.,True,43.805,41.721,9.985,2.311,29.274,22,183,6.25,13701.16,13677.37,-23.79,0.6,,,," 1. A KV (Key-Value) cache in Transformers refers to a data structure used for efficient storage and retrieval of pairs of keys and associated values. In the context of Transformers, it's often used to store intermediate results during the forward pass of the model, which can significantly speed up computations by avoiding redundant calculations.
+
+2. The key is typically a unique identifier for each input sequence or sub-sequence, while the value is the corresponding output or intermediate result. This allows the model to quickly access previously computed results when processing similar inputs, reducing the overall computation time.
+
+3. KV caches are an essential component of many Transformer-based models, including BERT and RoBERTa, as they help manage the large amount of data these models process during training and inference, making them more scalable and efficient.",
+2026-05-07 20:10:15,Local Ollama,mistral,reasoning_math,A student buys 3 notebooks for 2.50 euros each and 2 pens for 1.20 euros each. They pay with a 10 euro note. How much change should they get? Show the calculation briefly.,True,27.856,25.796,0.074,6.009,19.644,58,124,6.31,13677.02,13728.96,51.94,1.0,,,," The total cost of the notebooks is 3 * 2.50 = 7.50 euros.
+
+The total cost of the pens is 2 * 1.20 = 2.40 euros.
+
+So, the total cost of all items is 7.50 + 2.40 = 9.90 euros.
+
+Since they paid with a 10 euro note, the change should be 10 - 9.90 = 0.10 euros or 10 cents.",
+2026-05-07 20:11:03,Local Ollama,mistral,coding,Write a Python function called is_prime(n) that returns True if n is prime and False otherwise. Keep the code short and readable.,True,48.137,46.073,0.071,3.11,42.713,34,266,6.23,13728.96,14498.58,769.62,1.0,,,," Here's a simple implementation of the `is_prime` function in Python:
+
+```python
+def is_prime(n):
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+```
+
+This function checks if a number `n` is prime by first verifying that it's greater than 1 and less than or equal to 3 (since 1 isn't prime, and 2 and 3 are primes). Then it skips multiples of 2 and 3 because they can be easily divided. Finally, it checks divisibility up to the square root of `n` using a smart increment strategy that skips multiples of 4 and 6 (since every multiple of 4 is also a multiple of 2, and every multiple of 6 is either a multiple of 2 or 3).",
+2026-05-07 20:11:33,Local Ollama,mistral,summarization,"Summarize the following text in exactly 3 bullet points:
+
+Small Language Models are compact neural networks designed to perform language tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",True,29.891,27.831,0.101,8.493,19.078,83,120,6.29,14497.14,14638.49,141.35,1.0,,,," 1. Small Language Models are compact neural networks designed to handle language tasks with fewer parameters than larger models, making them suitable for local deployment, privacy-sensitive applications, and low-cost inference.
+2. Despite their size advantage, small models often underperform large models in complex reasoning, long-context tasks, and advanced coding due to their limited capacity.
+3. The trade-off between model size and performance means that while small language models are efficient and cost-effective, they may not deliver the same level of accuracy as larger models on more demanding language tasks.",
+2026-05-07 20:11:48,Local Ollama,mistral,json_structured_output,"Analyze this feedback and respond only in valid JSON with keys: sentiment, issue, urgency.
+
+Feedback: The app is useful, but it crashes every time I upload a large PDF.",True,14.597,12.534,0.064,4.971,7.471,47,39,5.22,14638.24,14976.21,337.97,1.0,True,,," {
+  ""sentiment"": ""positive"",
+  ""issue"": ""app crashes when uploading large PDFs"",
+  ""urgency"": ""high""
+}",
+2026-05-07 20:12:06,Local Ollama,mistral,factuality_hallucination_check,"If you do not know the answer, say 'I do not know'. Question: Who won the Nobel Prize in Physics in 2035?",True,18.667,16.622,0.08,3.836,12.647,37,67,5.3,14976.74,15228.68,251.94,0.0,,,," I do not have real-time data access, so I cannot provide the exact winner of the Nobel Prize in Physics for 2035. However, I can tell you that as of my last update, the prize is typically awarded each year to scientists for outstanding discoveries and contributions in the field of physics.",
+2026-05-07 20:12:22,Local Ollama,mistral,instruction_following,Write exactly two sentences about why local AI can be useful. Do not use bullet points.,True,16.151,14.106,0.133,2.297,11.623,22,64,5.51,15230.32,14832.53,-397.79,1.0,,2,False," Local AI, or artificial intelligence designed to function effectively within specific geographical regions or environments, can significantly enhance decision-making processes by incorporating contextually relevant data and cultural nuances. This tailored approach can lead to more accurate predictions and improved outcomes in various applications such as agriculture, healthcare, and urban planning.",
+2026-05-07 20:12:40,Local Ollama,mistral,rag_style_context,"Use only the context below to answer the question. If the answer is not in the context, say you do not know.
+
+Context: The company uses Ollama to run small language models locally. The main benefit is that private documents do not leave the laptop. The tested model was Phi-3 Mini.
+
+Question: Which model was tested and what was the main privacy benefit?",True,17.461,15.43,0.065,8.171,7.118,85,48,6.74,14832.73,13335.28,-1497.45,1.0,,,," The model that was tested was Phi-3 Mini, and the main privacy benefit of using it, as stated in the context, is that private documents do not leave the laptop since Ollama runs the small language models locally.",
+2026-05-07 20:12:52,Local Ollama,tinyllama,simple_explanation,Explain what a KV cache is in transformers in 3 simple bullet points.,True,12.113,10.068,2.588,1.121,6.179,52,193,31.24,13335.41,13453.65,118.24,0.6,,,,"Sure, I'd be happy to explain what a KV cache (Key-Value Cache) is in transformers! Here are three bullet points:
+
+1. A KV cache stores key-value pairs (also known as entities or tuples) that are used by the transformer. These entities can be anything, such as text, images, or audio data.
+
+2. The KV cache is a type of in-memory storage that allows for efficient retrieval and updating of these entities. This is because the cache stores the entities in a way that makes it easy to find them quickly when they are needed.
+
+3. A KV cache can be used by transformers to improve their performance, especially when working with large amounts of data. By storing frequently accessed entities in the cache, transformers can reduce the amount of time spent searching for and updating these entities, which can help to speed up processing times.",
+2026-05-07 20:13:00,Local Ollama,tinyllama,reasoning_math,A student buys 3 notebooks for 2.50 euros each and 2 pens for 1.20 euros each. They pay with a 10 euro note. How much change should they get? Show the calculation briefly.,True,8.213,6.175,0.128,1.311,4.459,87,151,33.86,13453.55,13690.64,237.09,0.0,,,,"To calculate how much change the student should receive, we need to subtract the total amount paid (in euros) from the total amount of notes (in euros). In this case, the total amount paid is 10 euro and the total amount of notes is 3 x 25 = 75.
+
+So, the total amount of notes that should be given to the student is:
+
+- 3 x 25 = 75
+- - 10 = 65
+
+Therefore, the student should receive:
+
+- 65 euro (total amount paid minus total amount of notes)
+
+This means that the student will get 65 euros in change.",
+2026-05-07 20:13:10,Local Ollama,tinyllama,coding,Write a Python function called is_prime(n) that returns True if n is prime and False otherwise. Keep the code short and readable.,True,9.58,7.525,0.093,0.864,6.46,65,203,31.42,13697.27,14060.47,363.2,1.0,,,,"```python
+def is_prime(n):
+    """"""
+    Checks whether a given number is prime or not.
+    
+    Args:
+        n (int): The number to check if prime or not.
+        
+    Returns:
+        bool: True if the number is prime, False otherwise.
+    """"""
+    
+    # Base case: If n = 1, return True because it's prime
+    if n == 1:
+        return True
+    
+    # Base case: If n = 2, return True because it's prime
+    elif n == 2:
+        return True
+    
+    # Check if the number is divisible by any integer less than or equal to itself
+    for I in range(3, int(n**0.5)+1, 2):
+        if n % I == 0:
+            return False
+    
+    return True
+```",
+2026-05-07 20:13:16,Local Ollama,tinyllama,summarization,"Summarize the following text in exactly 3 bullet points:
+
+Small Language Models are compact neural networks designed to perform language tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",True,6.373,4.316,0.121,1.921,2.207,118,68,30.81,14060.41,13633.58,-426.83,1.0,,,,"1. Small Languaige Models are designed to perform languaise tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",
+2026-05-07 20:13:22,Local Ollama,tinyllama,json_structured_output,"Analyze this feedback and respond only in valid JSON with keys: sentiment, issue, urgency.
+
+Feedback: The app is useful, but it crashes every time I upload a large PDF.",True,5.382,3.324,0.096,1.154,2.043,76,62,30.35,13633.45,13808.8,175.35,1.0,False,,,"Response:
+
+Key: ""sentiment""
+Value: {""positive"": 0, ""negative"": 0, ""neutral"": 0}
+
+Key: ""issue""
+Value: [""urgent""]
+
+Key: ""urgency""
+Value: [1]",
+2026-05-07 20:13:26,Local Ollama,tinyllama,factuality_hallucination_check,"If you do not know the answer, say 'I do not know'. Question: Who won the Nobel Prize in Physics in 2035?",True,4.264,2.231,0.104,0.916,1.19,67,38,31.92,13809.02,13824.68,15.66,0.0,,,,Answer: The Nobel Prize in Physics will be awarded to a team of scientists who have made significant contributions to understanding the properties and behavior of matter at extreme temperatures and pressures.,
+2026-05-07 20:13:34,Local Ollama,tinyllama,instruction_following,Write exactly two sentences about why local AI can be useful. Do not use bullet points.,True,8.041,5.964,0.094,0.67,5.118,53,151,29.51,13824.62,13859.76,35.14,1.0,,5,False,"Local AI is useful because it provides personalized and customized solutions to specific problems in the local community. By analyzing data from various sources, such as social media platforms, news articles, and customer feedback, local AI can identify patterns and trends that may not be apparent to traditional data analysis methods. This information can then be used to provide tailored recommendations and solutions for local businesses and individuals. Additionally, local AI can help address specific issues in the community by providing solutions that are more effective and efficient than those offered by larger corporations or government agencies. Overall, local AI is a valuable tool for improving the quality of life in local communities by providing personalized and customized solutions to specific problems.",
+2026-05-07 20:13:40,Local Ollama,tinyllama,rag_style_context,"Use only the context below to answer the question. If the answer is not in the context, say you do not know.
+
+Context: The company uses Ollama to run small language models locally. The main benefit is that private documents do not leave the laptop. The tested model was Phi-3 Mini.
+
+Question: Which model was tested and what was the main privacy benefit?",True,6.001,3.945,0.098,1.954,1.848,121,60,32.46,13859.66,13991.2,131.54,0.75,,,,"Answer: Ollama, a language model developed by Google, was used to run small language models locally on a laptop. The main privacy benefit of using Ollama is that private documents do not leave the laptop, as they are processed locally and stored in the user's device.",
+2026-05-07 20:13:55,Local Ollama,smollm2:1.7b,simple_explanation,Explain what a KV cache is in transformers in 3 simple bullet points.,True,15.504,13.4,4.824,1.316,7.129,45,110,15.43,13991.27,14691.26,699.99,0.8,,,,"- A KV (Key-Value) cache in transformers is a data structure that stores key-value pairs of model outputs and their corresponding input keys. This allows for fast retrieval of the output values when the same input keys are encountered again during training or inference.
+
+- The KV cache can be used to store intermediate results from the transformer's multi-head attention mechanism, enabling efficient computation and reducing memory usage.
+
+- By utilizing a KV cache, transformers can improve their performance by avoiding redundant computations and improving model efficiency.",
+2026-05-07 20:14:06,Local Ollama,smollm2:1.7b,reasoning_math,A student buys 3 notebooks for 2.50 euros each and 2 pens for 1.20 euros each. They pay with a 10 euro note. How much change should they get? Show the calculation briefly.,True,10.689,8.605,0.119,1.604,6.766,78,106,15.67,14691.16,14797.14,105.98,1.0,,,,"The total cost of the notebooks is 3 * 2.50 = 7.50 euros. The total cost of the pens is 2 * 1.20 = 2.40 euros. So, the total cost is 7.50 + 2.40 = 9.90 euros. They pay with a 10 euro note, so they should get back 10 - 9.90 = 0.10 euros in change.",
+2026-05-07 20:14:18,Local Ollama,smollm2:1.7b,coding,Write a Python function called is_prime(n) that returns True if n is prime and False otherwise. Keep the code short and readable.,True,11.655,9.581,0.163,1.049,8.111,58,132,16.27,14797.18,14749.38,-47.8,1.0,,,,"Here's a simple implementation of the `is_prime` function in Python:
+
+```python
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```
+
+This function checks divisibility up to the square root of `n`, which is an optimization over checking all numbers up to `n`. It returns `False` immediately when it finds a divisor, and otherwise returns `True` if no divisors are found.",
+2026-05-07 20:14:26,Local Ollama,smollm2:1.7b,summarization,"Summarize the following text in exactly 3 bullet points:
+
+Small Language Models are compact neural networks designed to perform language tasks with fewer parameters than large frontier models. They are useful for local deployment, privacy-sensitive applications, and low-cost inference. However, they usually perform worse than large models on complex reasoning, long-context tasks, and advanced coding.",True,8.275,6.223,0.132,2.285,3.763,104,61,16.21,14750.32,14771.35,21.03,1.0,,,,"1. Small Language Models have fewer parameters than Large Frontier Models.
+2. They are suitable for local deployments, privacy-sensitive applications, and cost-effective inference.
+3. However, they often struggle with complex reasoning, long-context tasks, and advanced coding compared to Large Frontier Models.",
+2026-05-07 20:14:32,Local Ollama,smollm2:1.7b,json_structured_output,"Analyze this feedback and respond only in valid JSON with keys: sentiment, issue, urgency.
+
+Feedback: The app is useful, but it crashes every time I upload a large PDF.",True,5.487,3.448,0.101,1.344,1.979,69,33,16.67,14771.3,14804.15,32.85,1.0,True,,,"{
+  ""sentiment"": ""negative"",
+  ""issue"": ""crashes when uploading large files"",
+  ""urgency"": ""high""
+}",
+2026-05-07 20:14:38,Local Ollama,smollm2:1.7b,factuality_hallucination_check,"If you do not know the answer, say 'I do not know'. Question: Who won the Nobel Prize in Physics in 2035?",True,6.225,4.166,0.118,1.055,2.965,60,49,16.52,14804.1,14892.25,88.15,0.25,,,,"I'm sorry for any confusion, but as an AI model, I don't have real-time data or access to future events. Therefore, I cannot provide information about who won the Nobel Prize in Physics in 2035.",
+2026-05-07 20:14:44,Local Ollama,smollm2:1.7b,instruction_following,Write exactly two sentences about why local AI can be useful. Do not use bullet points.,True,6.123,4.069,0.133,0.747,3.149,47,48,15.24,14892.25,14955.5,63.25,1.0,,2,False,"Local AI can be beneficial for individuals and businesses in their immediate surroundings as it often provides more personalized services tailored to the specific needs of the community. It also reduces reliance on distant servers, which can improve data security and reduce latency issues.",
+2026-05-07 20:14:52,Local Ollama,smollm2:1.7b,rag_style_context,"Use only the context below to answer the question. If the answer is not in the context, say you do not know.
+
+Context: The company uses Ollama to run small language models locally. The main benefit is that private documents do not leave the laptop. The tested model was Phi-3 Mini.
+
+Question: Which model was tested and what was the main privacy benefit?",True,8.172,6.111,0.148,2.559,3.345,110,37,11.06,14957.02,15319.08,362.06,0.75,,,,"The main privacy benefit of testing a Phi-3 Mini model was that it ran small language models locally, keeping personal documents on the laptop without leaving any data to external servers.",

@@ -1,0 +1,3 @@
+provider,model,avg_response_time_sec,avg_tokens_per_second,avg_output_tokens,avg_keyword_score,avg_total_tokens
+Groq API,llama-3.1-8b-instant,0.23,347.36,80.75,0.85,170.88
+Groq API,llama-3.3-70b-versatile,0.27,189.55,52.75,0.88,142.88
