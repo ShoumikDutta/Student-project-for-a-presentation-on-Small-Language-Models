@@ -24,9 +24,9 @@ st.caption("Local Ollama benchmark results for Small Language Models")
 # File paths
 # ---------------------------------------------------------
 
-BENCHMARK_FILE = "benchmark_results_local.csv"
-PRESENTATION_FILE = "presentation_summary_local.csv"
-SCENARIO_FILE = "scenario_summary_local.csv"
+BENCHMARK_FILE = pd.read_csv("Benchmark/benchmark_results_local.csv")
+PRESENTATION_FILE = pd.read_csv("Benchmark/presentation_summary_local.csv")
+SCENARIO_FILE = pd.read_csv("Benchmark/scenario_summary_local.csv")
 
 
 # ---------------------------------------------------------
