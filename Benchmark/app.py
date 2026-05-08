@@ -25,8 +25,8 @@ st.caption("Local Ollama benchmark results for Small Language Models")
 # ---------------------------------------------------------
 
 BENCHMARK_FILE = "https://github.com/ShoumikDutta/Student-project-for-a-presentation-on-Small-Language-Models/blob/main/Benchmark/benchmark_results_local.csv"  #pd.read_csv("Benchmark/benchmark_results_local.csv")
-PRESENTATION_FILE = pd.read_csv("Benchmark/presentation_summary_local.csv")
-SCENARIO_FILE = pd.read_csv("Benchmark/scenario_summary_local.csv")
+PRESENTATION_FILE =  "https://github.com/ShoumikDutta/Student-project-for-a-presentation-on-Small-Language-Models/blob/main/Benchmark/presentation_summary_local.csv" #pd.read_csv("Benchmark/presentation_summary_local.csv")
+SCENARIO_FILE = "https://github.com/ShoumikDutta/Student-project-for-a-presentation-on-Small-Language-Models/blob/main/Benchmark/scenario_summary_local.csv" #pd.read_csv("Benchmark/scenario_summary_local.csv")
 
 
 # ---------------------------------------------------------
